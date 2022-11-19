@@ -13,11 +13,11 @@ class HomeAppbarTitle extends StatelessWidget {
       children: <Widget>[
         Text(
           badge,
-          style: TextStyle(fontSize: 48),
+          style: const TextStyle(fontSize: 32),
         ),
         Text(
           name,
-          style: TextStyle(fontSize: 32),
+          style: const TextStyle(fontSize: 28),
         )
       ],
     );

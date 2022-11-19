@@ -4,10 +4,10 @@ import '../../../models/user.dart';
 import '../../home/user_info_section.dart';
 import 'home_title.dart';
 
-class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+class OwnAppBar extends StatelessWidget implements PreferredSizeWidget {
   final User user;
 
-  const HomeAppBar({super.key, required this.user});
+  const OwnAppBar({super.key, required this.user});
   @override
   Size get preferredSize => const Size.fromHeight(150);
 

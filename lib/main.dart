@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:user_app/api/user_client.dart';
+import 'package:user_app/providers/user_provider.dart';
 
 import 'package:user_app/screens/home_screen.dart';
 
@@ -9,6 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'MyApp', home: HomeScreen());
+    return MaterialApp(
+      title: 'MyApp',
+      home: ChangeNotifierProvider(
+        create: (ctx) {
+          return UserProvider.injectRepository(userClient: UserRepository());
+        },
+        child: const HomeScreen(),
+      ),
+    );
   }
 }
