@@ -22,9 +22,8 @@ class _MainScreenState extends State<MainScreen> {
   void initState() {
     super.initState();
     final userProvider = Provider.of<UserProvider>(context, listen: false);
-    userProvider.getUser();
     final donateProvider = Provider.of<DonateProvider>(context, listen: false);
-    donateProvider.getImages();
+    userProvider.getUser('0').then((user) => donateProvider.getImages(user.id));
   }
 
   void _onBottomNavbarItemTapped(int index) {

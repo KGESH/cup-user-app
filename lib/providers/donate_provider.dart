@@ -10,9 +10,9 @@ class DonateProvider with ChangeNotifier {
   DonateProvider.injectRepository({required DonateRepository donateRepository})
       : _donateRepository = donateRepository;
 
-  getImages() async {
+  getImages(String userId) async {
     loading = true;
-    items = await _donateRepository.getDonateOptionItems();
+    items = await _donateRepository.getDonateOptionItems(userId);
 
     loading = false;
     notifyListeners();

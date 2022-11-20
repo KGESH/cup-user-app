@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MyApp',
+      theme: ThemeData(fontFamily: 'Anton'),
       home: MultiProvider(
         providers: [
           ChangeNotifierProvider(

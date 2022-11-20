@@ -9,17 +9,34 @@ class HomeAppBarTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Text(
-          badge,
-          style: const TextStyle(fontSize: 32),
-        ),
-        Text(
-          name,
-          style: const TextStyle(fontSize: 28),
-        ),
-      ],
+    return Container(
+      padding: const EdgeInsets.only(top: 4),
+      child: Row(
+        children: <Widget>[
+          Container(
+            margin: const EdgeInsets.only(right: 8),
+            child: Text(
+              badge,
+              style: const TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w900,
+                color: Colors.deepPurpleAccent,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 8),
+            child: Text(
+              name,
+              style: const TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.w700,
+                color: Colors.black87,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

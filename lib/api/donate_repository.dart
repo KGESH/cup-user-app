@@ -6,19 +6,17 @@ import 'package:user_app/models/donate_item.dart';
 class DonateRepository {
   final donateClient = http.Client();
 
-  Future<List<DonateOptionItem>> getDonateOptionItems() async {
-    const url = 'http://localhost:3000/users/donate/0';
+  Future<List<DonateOptionItem>> getDonateOptionItems(String userId) async {
+    final url = 'http://localhost:3000/users/$userId/donates';
     final response = await donateClient.get(Uri.parse(url));
 
     if (response.statusCode != 200) {
       throw Exception('GET donate info fail!');
     }
+
     List<dynamic> items = jsonDecode(response.body);
-    print(items);
-
     return List<DonateOptionItem>.from(
-        items.map((item) => DonateOptionItem.fromJson(item)));
-
-    // return DonateOptionItem.fromJson();
+      items.map((item) => DonateOptionItem.fromJson(item)),
+    );
   }
 }

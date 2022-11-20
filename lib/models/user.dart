@@ -1,4 +1,5 @@
 class User {
+  late final String id;
   late final String name;
   late final String badge;
   late final int donateLevel;
@@ -6,6 +7,7 @@ class User {
   late final int echoPoint;
 
   User({
+    required this.id,
     required this.name,
     required this.badge,
     required this.donateLevel,
@@ -15,6 +17,7 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
+      id: json['id'],
       name: json['name'],
       badge: json['badge'],
       donateLevel: json['donateLevel'],
@@ -25,6 +28,7 @@ class User {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'name': name,
       'badge': badge,
       'donateLevel': donateLevel,

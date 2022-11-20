@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 class UserInfoSection extends StatelessWidget {
@@ -6,6 +7,11 @@ class UserInfoSection extends StatelessWidget {
   final int donateExp;
   final int donateLevel;
   final double expPercent;
+
+  String _formatPoint(int echoPoint) {
+    var pointFormat = NumberFormat('###,###,###,###');
+    return pointFormat.format(echoPoint);
+  }
 
   const UserInfoSection({
     Key? key,
@@ -22,15 +28,33 @@ class UserInfoSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            const Text('에코 포인트', style: TextStyle(fontSize: 18)),
+            Row(
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(right: 4),
+                  child: const Icon(
+                    Icons.paid_outlined,
+                    color: Colors.green,
+                    size: 28,
+                  ),
+                ),
+                const Text('에코 포인트',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w500,
+                    )),
+              ],
+            ),
             TextButton(
               onPressed: () {},
               child: Text(
-                '$echoPoint P >',
+                '${_formatPoint(echoPoint)} P >',
                 style: const TextStyle(
-                    fontSize: 24,
-                    color: Colors.black54,
-                    fontWeight: FontWeight.w700),
+                  fontSize: 24,
+                  color: Colors.deepPurpleAccent,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ],
@@ -45,7 +69,7 @@ class UserInfoSection extends StatelessWidget {
                     margin: const EdgeInsets.only(right: 10),
                     child: const Text(
                       '기부 레벨',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 24),
                     ),
                   ),
                   Text(
@@ -62,7 +86,7 @@ class UserInfoSection extends StatelessWidget {
                 percent: expPercent,
                 center: Text(
                   '${(expPercent * 100).toStringAsFixed(2)}%',
-                  style: TextStyle(fontSize: 12),
+                  style: const TextStyle(fontSize: 12),
                 ),
                 progressColor: Colors.greenAccent,
               ),

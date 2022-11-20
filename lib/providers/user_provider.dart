@@ -11,11 +11,13 @@ class UserProvider with ChangeNotifier {
   UserProvider.injectRepository({required UserRepository userRepository})
       : _userRepository = userRepository;
 
-  getUser() async {
+  Future<User> getUser(String userId) async {
     loading = true;
-    _user = await _userRepository.requestMe();
+    _user = await _userRepository.requestMe(userId);
 
     loading = false;
     notifyListeners();
+
+    return user;
   }
 }

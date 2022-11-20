@@ -32,6 +32,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
         ],
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Colors.deepPurpleAccent,
+        focusColor: Colors.greenAccent,
+        onPressed: () {
+          print('press!');
+        },
+        label: const Text('재활용'),
+        icon: const Icon(
+          Icons.recycling,
+        ),
+      ),
     );
   }
 }

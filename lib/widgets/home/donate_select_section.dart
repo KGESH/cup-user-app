@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:user_app/models/donate_item.dart';
+import 'package:user_app/widgets/home/donate_option_item.dart';
 
 class DonateSelectSection extends StatelessWidget {
   final List<DonateOptionItem> items;
@@ -10,18 +12,18 @@ class DonateSelectSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: GridView.builder(
-        shrinkWrap: true,
-        itemCount: items.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-        ),
-        itemBuilder: (ctx, int index) => SizedBox(
-            child: Image.network(
-          items[index].imageUrl,
-          fit: BoxFit.cover,
-        )),
-        //     .toList(),
-      ),
+          shrinkWrap: true,
+          itemCount: items.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemBuilder: (ctx, int index) => DonateOptionItemWidget(
+                optionName: items[index].name,
+                imageUrl: items[index].imageUrl,
+                selected: items[index].selected,
+              )
+          //     .toList(),
+          ),
     );
   }
 }

@@ -26,7 +26,7 @@ class BottomNavbar extends StatelessWidget {
           label: 'HOME',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
+          icon: Icon(Icons.clean_hands),
           label: 'DONATE',
         ),
         BottomNavigationBarItem(
@@ -34,8 +34,8 @@ class BottomNavbar extends StatelessWidget {
           label: 'MAP',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart),
-          label: 'SHOP',
+          icon: Icon(Icons.emoji_events),
+          label: 'RANK',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.account_circle),
