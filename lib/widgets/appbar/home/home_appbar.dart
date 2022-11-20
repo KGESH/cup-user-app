@@ -21,7 +21,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              HomeAppbarTitle(
+              HomeAppBarTitle(
                 badge: user.badge,
                 name: user.name,
               ),

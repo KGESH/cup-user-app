@@ -6,11 +6,15 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      alignment: Alignment.center,
-      width: 300,
-      height: 300,
-      child: const Icon(Icons.dangerous),
-    ));
+      body: Container(
+        alignment: Alignment.center,
+        width: 300,
+        height: 300,
+        child: const Icon(
+          Icons.dangerous,
+          size: 150,
+        ),
+      ),
+    );
   }
 }

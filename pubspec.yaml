@@ -39,6 +39,11 @@ dependencies:
   percent_indicator: ^4.0.1
   provider: ^6.0.4
   http: ^0.13.5
+  barcode_widget: ^2.0.3
+  flutter_svg: ^1.1.6
+
+
+
 
 
 

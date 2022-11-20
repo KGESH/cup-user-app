@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class HomeAppbarTitle extends StatelessWidget {
+class HomeAppBarTitle extends StatelessWidget {
   final String badge;
   final String name;
 
-  const HomeAppbarTitle({Key? key, required this.badge, required this.name})
+  const HomeAppBarTitle({Key? key, required this.badge, required this.name})
       : super(key: key);
 
   @override
@@ -18,7 +18,7 @@ class HomeAppbarTitle extends StatelessWidget {
         Text(
           name,
           style: const TextStyle(fontSize: 28),
-        )
+        ),
       ],
     );
   }

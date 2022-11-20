@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import '../api/user_client.dart';
+import '../api/user_repository.dart';
 import '../models/user.dart';
 
 class UserProvider with ChangeNotifier {
@@ -8,8 +8,8 @@ class UserProvider with ChangeNotifier {
   late User _user;
   User get user => _user;
 
-  UserProvider.injectRepository({required UserRepository userClient})
-      : _userRepository = userClient;
+  UserProvider.injectRepository({required UserRepository userRepository})
+      : _userRepository = userRepository;
 
   getUser() async {
     loading = true;
