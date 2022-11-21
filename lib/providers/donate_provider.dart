@@ -6,6 +6,7 @@ class DonateProvider with ChangeNotifier {
   final DonateRepository _donateRepository;
   late List<DonateOptionItem> items;
   bool loading = false;
+  bool switchLoading = false;
 
   DonateProvider.injectRepository({required DonateRepository donateRepository})
       : _donateRepository = donateRepository;
@@ -16,5 +17,9 @@ class DonateProvider with ChangeNotifier {
 
     loading = false;
     notifyListeners();
+  }
+
+  Future<bool> updateDonateSelected(bool changedValue) {
+    return _donateRepository.updateDonateSelected(changedValue);
   }
 }
