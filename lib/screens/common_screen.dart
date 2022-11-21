@@ -8,7 +8,22 @@ class CommonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const SwitchCommonDonateButton(),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [SwitchCommonDonateButton()],
+          ),
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(Icons.airline_seat_recline_normal),
+          ),
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(Icons.airline_seat_recline_normal),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -8,16 +8,19 @@ class ShopScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(
+      child: Column(
         children: [
-          SwitchCommonDonateButton(),
-          IconButton(
-            onPressed: () => {},
-            icon: Icon(Icons.shopping_cart),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [SwitchCommonDonateButton()],
           ),
           IconButton(
             onPressed: () => {},
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
+          ),
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(Icons.shopping_cart),
           ),
         ],
       ),

@@ -10,6 +10,9 @@ class SwitchCommonDonateButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
 
-    return FloatingActionButton(onPressed: userProvider.changeNavbar);
+    return FloatingActionButton(
+      onPressed: userProvider.changeNavbar,
+      child: const Icon(Icons.compare_arrows),
+    );
   }
 }

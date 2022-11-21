@@ -8,9 +8,12 @@ class RankingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(
+      child: Column(
         children: [
-          const SwitchCommonDonateButton(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [SwitchCommonDonateButton()],
+          ),
           IconButton(
             onPressed: () => {},
             icon: const Icon(Icons.emoji_events),

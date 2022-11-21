@@ -8,16 +8,19 @@ class DonateScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Row(
+      child: Column(
         children: [
-          SwitchCommonDonateButton(),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [SwitchCommonDonateButton()],
           ),
           IconButton(
             onPressed: () => {},
-            icon: Icon(Icons.favorite),
+            icon: const Icon(Icons.favorite),
+          ),
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(Icons.favorite),
           ),
         ],
       ),
