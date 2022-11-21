@@ -7,6 +7,13 @@ class UserProvider with ChangeNotifier {
   bool loading = false;
   late User _user;
   User get user => _user;
+  bool _isCommonScreenMode = true;
+  bool get isCommonScreenMode => _isCommonScreenMode;
+
+  changeNavbar() {
+    _isCommonScreenMode = !isCommonScreenMode;
+    notifyListeners();
+  }
 
   UserProvider.injectRepository({required UserRepository userRepository})
       : _userRepository = userRepository;

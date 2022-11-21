@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class BottomNavbar extends StatelessWidget {
+class BottomDonateNavbar extends StatelessWidget {
   final int bottomNavBarIndex;
   final Function(int) onItemTapped;
 
-  const BottomNavbar({
+  const BottomDonateNavbar({
     Key? key,
     required this.bottomNavBarIndex,
     required this.onItemTapped,

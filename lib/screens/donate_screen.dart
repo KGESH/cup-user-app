@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:user_app/widgets/switch/switch_common_donate_button.dart';
+
 class DonateScreen extends StatelessWidget {
   const DonateScreen({Key? key}) : super(key: key);
 
@@ -8,8 +10,9 @@ class DonateScreen extends StatelessWidget {
     return Container(
       child: Row(
         children: [
+          SwitchCommonDonateButton(),
           IconButton(
-            onPressed: () => {},
+            onPressed: () {},
             icon: Icon(Icons.favorite),
           ),
           IconButton(
